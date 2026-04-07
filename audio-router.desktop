@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Aurora Audio Router
+Comment=Raspberry Pi audio cross-router (A↔B)
+Exec=/usr/bin/python3 /home/par/audio-router/audio_router.py
+Icon=audio-card
+Terminal=false
+Categories=AudioVideo;Audio;Utility;
+StartupNotify=true
