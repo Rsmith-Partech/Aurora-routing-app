@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-VERSION = "1.0.0"
+VERSION = "1.1.0"
 
 import tkinter as tk
 from tkinter import ttk, messagebox
@@ -348,10 +348,10 @@ class AudioRouterApp(tk.Tk):
         # Device selection
         dev_frame = ttk.LabelFrame(self, text="Interfaces")
         dev_frame.pack(fill='x', padx=10, pady=10)
-        ttk.Label(dev_frame, text="Interface A (input)").grid(row=0, column=0, sticky='w', **pad)
+        ttk.Label(dev_frame, text="WMT").grid(row=0, column=0, sticky='w', **pad)
         self.combo_A = ttk.Combobox(dev_frame, textvariable=self.selected_A_var, state="readonly", width=80)
         self.combo_A.grid(row=0, column=1, sticky='ew', **pad)
-        ttk.Label(dev_frame, text="Interface B (output)").grid(row=1, column=0, sticky='w', **pad)
+        ttk.Label(dev_frame, text="LAi").grid(row=1, column=0, sticky='w', **pad)
         self.combo_B = ttk.Combobox(dev_frame, textvariable=self.selected_B_var, state="readonly", width=80)
         self.combo_B.grid(row=1, column=1, sticky='ew', **pad)
 
@@ -376,28 +376,28 @@ class AudioRouterApp(tk.Tk):
                         variable=self.mute_all_var).grid(row=0, column=4, sticky='w', padx=20, pady=6)
 
         # Input A row
-        ttk.Label(vol_frame, text="Input A").grid(row=1, column=0, sticky='w', **pad)
+        ttk.Label(vol_frame, text="Headset Mic").grid(row=1, column=0, sticky='w', **pad)
         ttk.Scale(vol_frame, from_=0.0, to=1.0, variable=self.inA_gain_var,
                   orient='horizontal', length=300).grid(row=1, column=1, sticky='w', **pad)
         ttk.Checkbutton(vol_frame, text="Mute", variable=self.mute_inA_var).grid(row=1, column=2, sticky='w', **pad)
         ttk.Label(vol_frame, textvariable=self.inA_pct_var, width=6).grid(row=1, column=3, sticky='w', **pad)
 
         # Output A row
-        ttk.Label(vol_frame, text="Output A").grid(row=2, column=0, sticky='w', **pad)
+        ttk.Label(vol_frame, text="Headset Speaker").grid(row=2, column=0, sticky='w', **pad)
         ttk.Scale(vol_frame, from_=0.0, to=1.0, variable=self.outA_gain_var,
                   orient='horizontal', length=300).grid(row=2, column=1, sticky='w', **pad)
         ttk.Checkbutton(vol_frame, text="Mute", variable=self.mute_outA_var).grid(row=2, column=2, sticky='w', **pad)
         ttk.Label(vol_frame, textvariable=self.outA_pct_var, width=6).grid(row=2, column=3, sticky='w', **pad)
 
         # Input B row
-        ttk.Label(vol_frame, text="Input B").grid(row=3, column=0, sticky='w', **pad)
+        ttk.Label(vol_frame, text="LAi mic").grid(row=3, column=0, sticky='w', **pad)
         ttk.Scale(vol_frame, from_=0.0, to=1.0, variable=self.inB_gain_var,
                   orient='horizontal', length=300).grid(row=3, column=1, sticky='w', **pad)
         ttk.Checkbutton(vol_frame, text="Mute", variable=self.mute_inB_var).grid(row=3, column=2, sticky='w', **pad)
         ttk.Label(vol_frame, textvariable=self.inB_pct_var, width=6).grid(row=3, column=3, sticky='w', **pad)
 
         # Output B row
-        ttk.Label(vol_frame, text="Output B").grid(row=4, column=0, sticky='w', **pad)
+        ttk.Label(vol_frame, text="LAi speaker").grid(row=4, column=0, sticky='w', **pad)
         ttk.Scale(vol_frame, from_=0.0, to=1.0, variable=self.outB_gain_var,
                   orient='horizontal', length=300).grid(row=4, column=1, sticky='w', **pad)
         ttk.Checkbutton(vol_frame, text="Mute", variable=self.mute_outB_var).grid(row=4, column=2, sticky='w', **pad)
