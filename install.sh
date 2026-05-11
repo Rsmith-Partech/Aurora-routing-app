@@ -41,13 +41,13 @@ sudo apt-get install -y python3-tk python3-numpy 2>/dev/null || true
 # ---- Install Python packages ----
 echo ""
 echo "Installing Python packages..."
-if $PYTHON -m pip install sounddevice numpy --break-system-packages 2>/dev/null; then
-    echo "Installed sounddevice and numpy via pip (--break-system-packages)"
-elif $PYTHON -m pip install sounddevice numpy 2>/dev/null; then
-    echo "Installed sounddevice and numpy via pip"
+if $PYTHON -m pip install sounddevice numpy flask --break-system-packages 2>/dev/null; then
+    echo "Installed sounddevice, numpy, flask via pip (--break-system-packages)"
+elif $PYTHON -m pip install sounddevice numpy flask 2>/dev/null; then
+    echo "Installed sounddevice, numpy, flask via pip"
 else
-    echo "WARNING: pip install failed — trying pipx / system packages as fallback" >&2
-    sudo apt-get install -y python3-sounddevice python3-numpy 2>/dev/null || true
+    echo "WARNING: pip install failed — trying system packages as fallback" >&2
+    sudo apt-get install -y python3-sounddevice python3-numpy python3-flask 2>/dev/null || true
 fi
 
 # ---- Create install directory ----
